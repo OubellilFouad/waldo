@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base{
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  .content{
+    background-image: url('./assets/characters.png');
+  }
+}
