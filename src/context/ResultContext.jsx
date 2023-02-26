@@ -18,6 +18,8 @@ export const ResultContext = ({children}) => {
   const [start,setStart] = useState(false);
   const [finish,setFinish] = useState(false);
   const [players,setPlayers] = useState([]);
+  const [result,setResult] = useState('');
+  const [style,setStyle] = useState('hidden');
   const imageRef = ref(images,'/');
   const colRef = collection(db,'characters');
   const playersRef = collection(db,'players');
@@ -36,12 +38,11 @@ export const ResultContext = ({children}) => {
     }
     onSnapshot(q,(data) => {
       setPlayers(data.docs.map((doc)=>({...doc.data()})))
-      console.log(players);
     })
     getCharacters();
   },[])
   return (
-    <Result.Provider value={{choice,setChoice,character,setCharacter,imagesArr,setImagesArr,characters,setCharacters,close,setClose,found,setFound,hidden,setHidden,minutes,seconds,setMinutes,setSeconds,start,setStart,finish,setFinish,setPlayers,players}}>
+    <Result.Provider value={{choice,setChoice,character,setCharacter,imagesArr,setImagesArr,characters,setCharacters,close,setClose,found,setFound,hidden,setHidden,minutes,seconds,setMinutes,setSeconds,start,setStart,finish,setFinish,setPlayers,players,result,setResult,setStyle,style}}>
         {children}
     </Result.Provider>
   )

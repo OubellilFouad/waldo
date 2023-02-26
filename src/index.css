@@ -7,6 +7,12 @@
   ::-webkit-scrollbar{
     display: none;
   }
+  *{
+    cursor: none;
+  }
+  button{
+    cursor: none;
+  }
   .content{
     background-image: url('./assets/characters.png');
   }
